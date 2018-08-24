@@ -1,0 +1,133 @@
+extends ../templates/base
+
+block variables
+	- var classBody = 'index-page'
+	- var classWrapper = 'index'
+
+block title
+	title Главная
+
+block header
+	include ../modules/header
+	+header()
+		+header-contact()
+block main
+	.banner
+		.banner__content.container
+			.banner__text
+				p
+					| Мы уже
+					span более 5-ти лет
+					| работаем на рынке инструментального производства
+				h1
+					| Проектирование и
+					br 
+					| изготовление
+					br
+					| пресс-форм и штампов
+	.content-main.container
+		.content-main__inner
+			section.company
+				ul.row
+					li.col-lg-5.col-md-6
+						.company__left
+							.company__left-img(style='background-image: url(' + require('../../components/images/photo-1.jpg') +')')
+					li.col-lg-7.col-md-6
+						.company__right
+							h2.section-title
+								| О нашей 
+								br
+								| компании
+							p.
+								Нам удалось собрать высокопрофессиональный коллектив, некоторые сотрудники которого имеют 20-ти летний опыт работы в инструментальном производстве.
+							p.
+								Используя грамотных и опытных конструкторов, работающих в современных CAT-CAD системах мы можем гарантировать нашим Заказчикам качественное проектирование и изготовление штампов, пресс форм, литьевых форм. И, что не маловажно, в срок. 
+							p.
+								Стоимость изготовления пресс формы или штампа у нашей компании одна из самых недорогих в Украине благодаря высокой автоматизации производственных процессов и исключения услуг посредников.
+							p.
+								Заказать пресс-форму или штамп вы можете, воспользовавшись формами обратной связи, скайпом или номерами телефонов предоставленных на сайте.
+							a(href="#") Читать еще
+							.company__total
+								ul.row
+									mixin total(num, text)
+										li.col-sm-4
+											.company__total-box
+												p= num
+											.company__total-text
+												p= text
+									+total('20', 'Лет Опыта')
+									+total('700', 'Выполненных Проектов')
+									+total('376', 'Партнеров и клиентов')
+			section.staff
+				h2.section-title
+					| Мы располагаем следующим современным
+					br
+					| металлообрабатывающим оборудованием:
+				.staff__block
+					ul.clearfix
+						mixin staffBox(title, name)
+							li.staff__box
+								.staff__img(style='background-image: url(' + require("../../components/images/photo-1.jpg") + ')')
+								.staff__layout
+								h3= title
+								p= name
+						+staffBox('Обраб. Фрез. Центр', 'DMC 100V hi-dyn (Германия)')
+						+staffBox('Обраб. Фрез. Центр', 'DMC 63V (Германия)')
+						+staffBox('Эрозионный проволочный станок', 'AGIECUT 300 (Швейцария)')
+						+staffBox('Эрозионный прошивной станок', 'AGIETRON 200 (Швейцария)')
+						+staffBox('Токарный ЧПУ', 'GILDEMEISTER MV5T-4A (Германия)')
+			section.projects
+				h2.section-title
+					| Наши
+					br
+					| Проекты
+				.projects__block
+					.slider.slick-projects
+						mixin slickProjects(limg, ldata, lname, mimg, mdata, mname, simg1, sdata1, sname1, simg2, sdata2, sname2)
+							div
+								ul.row
+									li.col-sm-6
+										a.slick-projects__large(href=require('../../components/images/project-' + limg + '.jpg'), data-fancybox="gallery", style='background-image: url(' + require('../../components/images/project-' + limg + '.jpg') + ')')
+											.slick-projects__overlay
+												.slick-projects__info
+													.slick-projects__data
+														p= ldata
+													.slick-projects__name
+														p= lname
+									li.col-sm-6
+										a.slick-projects__mid(href=require('../../components/images/project-' + mimg + '.jpg'), data-fancybox="gallery", style='background-image: url(' + require('../../components/images/project-' + mimg + '.jpg') + ')')
+											.slick-projects__overlay
+												.slick-projects__info
+													.slick-projects__data
+														p= mdata
+													.slick-projects__name
+														p= mname
+										a.slick-projects__small(href=require('../../components/images/project-' + simg1 + '.jpg'), data-fancybox="gallery", style='background-image: url(' + require('../../components/images/project-' + simg1 + '.jpg') + ')')
+											.slick-projects__overlay
+												.slick-projects__info
+													.slick-projects__data
+														p= sdata1
+													.slick-projects__name
+														p= sname1
+										a.slick-projects__small(href=require('../../components/images/project-' + simg2 + '.jpg'), data-fancybox="gallery", style='background-image: url(' + require('../../components/images/project-' + simg2 + '.jpg') + ')')
+											.slick-projects__overlay
+												.slick-projects__info
+													.slick-projects__data
+														p= sdata2
+													.slick-projects__name
+														p= sname2
+						+slickProjects('1', '01.01.18', 'Название проекта 1', '2', '01.01.18', 'Название проекта 2', '3', '01.01.18', 'Название проекта 3', '4', '01.01.18', 'Название проекта 4')
+						+slickProjects('1', '01.01.18', 'Название проекта 1', '2', '01.01.18', 'Название проекта 2', '3', '01.01.18', 'Название проекта 3', '4', '01.01.18', 'Название проекта 4')
+			section.clients
+				h2.section-title
+					| Наши
+					br
+					| Клиенты
+				.clients__block
+					ul.clearfix
+						- var arr = [1, 2, 1, 2, 1, 1, 2, 1, 2, 1]
+							each name in arr
+								li.clients__box
+									img(src=require("../../components/images/partner-" + name + ".png"), alt="")
+					a(href="#").btn.btn--blue Работать с нами	
+			include ../templates/contact

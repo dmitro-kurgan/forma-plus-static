@@ -1,0 +1,17 @@
+section.you-like
+	h2.section-title Вам также понравится:
+	ul.row
+		mixin youLike(img, data, name)
+			li.col-sm-4
+				a(href="article.html").you-like__box
+					.you-like__img(style='background-image: url(' + require('../../components/images/' + img + '.jpg') + ')')
+					.you-like__data 
+						| 
+						= data
+					.you-like__name
+						|
+						= name 
+					.you-like__link Читать еще
+		+youLike('slider-1', 'December 10, 2017', 'Реализация намеченных плановых заданий')
+		+youLike('slider-2', 'December 10, 2017', 'Реализация намеченных плановых заданий')
+		+youLike('slider-3', 'December 10, 2017', 'Реализация намеченных плановых заданий')

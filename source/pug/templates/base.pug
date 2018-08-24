@@ -1,0 +1,30 @@
+include ../templates/mixins
+
+block vars
+	- var tel1 = '+38(050)400-31-67'
+	- var tel1link = '+380504003167'
+	- var tel2 = '+38(050)575-71-72'
+	- var tel2link = '+380505757172'
+	- var mail = 'formikaltd@ukr.net'
+	
+block variables
+
+doctype html
+html(lang="en")
+	head
+		block title
+			title Index
+		meta(charset="UTF-8")
+		meta(name="viewport", content="initial-scale=1.0, width=device-width, user-scalable=no")
+		block headscript
+	body(class='' + classBody)
+		div(class='wrapper wrapper--' + classWrapper)
+			block header
+			.content
+				block main
+			block footer
+				include ../modules/footer
+			// =====================BUTTON-TO-TOP========================
+			a#back-to-top.btn-primary.back-to-top(href='#', role='button', title='', data-toggle='tooltip', data-placement='left')
+				i.arrow
+		block script

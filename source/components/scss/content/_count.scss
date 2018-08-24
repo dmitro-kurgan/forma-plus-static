@@ -1,0 +1,35 @@
+.wrapper {
+	&--count {
+		h1 {
+			font-size: 36px;
+			color: #1d1f21;
+			margin: 40px 0 30px 0;
+		}
+		.content {
+			background: $background-color;
+		}
+		.contact-us__form {
+			form {
+				max-width: 100%;
+				input {
+					@media screen and (min-width: 1440px) {
+						width: 360px;
+					}
+				}
+			}
+		}
+	}
+}
+.count-page {
+	.contact-us {
+		h2, span {
+			margin-top: 0px;
+			margin-bottom: 55px;
+		}
+		span {
+			display: block;
+			color: #1d2021;
+			font-size: 16.5px;
+		}
+	}
+}

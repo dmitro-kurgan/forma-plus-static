@@ -1,0 +1,62 @@
+extends ../templates/base
+
+block variables
+	- var classBody = 'count-page'
+	- var classWrapper = 'count'
+
+block title
+	title Просчет
+
+block header
+	include ../modules/header
+	+header()
+block main
+	section.breadcrumb
+		.container
+			ul.clearfix
+				li
+					a(href='./') Главная
+				li Просчет
+			+language()
+	.content-main.container
+		h1 Просчет
+		.content-main__inner
+			section.contact-us
+				.contact-us__block
+					.row
+						.col-md-4
+							h2.section-title
+								| Свяжитесь с нами!
+							.contact-us__tel
+								p Телефон:
+								ul
+									li
+										a(href="tel:" + tel1link)= tel1
+									li
+										a(href="tel:" + tel2link)= tel2
+							.contact-us__email
+								p E-mail
+								ul
+									li
+										a(href="mailto:" + mail)= mail
+							.contact-us__address
+								p Адрес:
+								ul
+									li
+										| ул. Текстильная 24
+										br
+										| г. Харьков, Украина
+						.col-md-8
+							.contact-us__form
+								span.
+									Здесь Вы можете заказать просчёт своего заказа. Мы с Вами обязательно свяжемся.
+								form
+									.form-group.clearfix
+										input.form-control(type="text", placeholder='Имя')
+										input.form-control(type="text", placeholder='Фамилия')
+									.form-group.clearfix
+										input.form-control(type="text", placeholder='Телефон')
+										input.form-control(type="text", placeholder='E-mail')
+									.form-group
+										textarea.form-control(placeholder='Сообщение')
+								button(type='submit').btn.btn--blue Отправить	

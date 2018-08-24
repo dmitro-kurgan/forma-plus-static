@@ -1,0 +1,214 @@
+.wrapper {
+	&--comments {
+		.content {
+			background: $background-color;
+		}
+		h1 {
+			font-size: 36px;
+			color: #1d1f21;
+			margin: 40px 0 30px 0;
+		}
+		.contact-us {
+			padding: 20px 100px 100px;
+			@media #{$tablet} {
+				padding: 20px 50px 50px;
+			}
+			@media #{$mobile} {
+				padding: 20px;
+			}
+			&__block {
+				h2 {
+					margin-bottom: 40px;
+				}
+				p {
+
+					font: 300 normal 16px $font3;
+					font-size: 16px;
+					color: #6c6d6f;
+					line-height: 2;
+				}
+			}
+		}
+	}
+}
+.testimonials {
+	&__top {
+		margin: 0px 100px 100px;
+		padding-top: 60px;
+		display: flex;
+		justify-content: space-between;
+		@media #{$tablet} {
+			margin: 0px 50px 50px;
+			padding-top: 30px;
+		}
+		@media #{$mobile} {
+			display: block;
+			margin: 0px 20px 20px;
+		}
+		h2 {
+			height: 28px;
+		}
+		p {
+			max-width: 500px;
+			font-size: 17px;
+			color: #1d2021;
+			line-height: 1.25;
+			@media #{$mobile} {
+				margin-top: 30px;
+			}
+		}
+	}
+}
+.slick {
+	&-comments {
+		&__box {
+		// min-width: 640px;
+			width: 750px;
+		}
+		&__left {
+			display: block;
+			max-width: 270px;
+			margin: auto;
+			img {
+				width: 100%;
+			}
+		}
+		&__right {
+			// display: none;
+			max-width: 320px;
+			position: relative;
+			@media #{$mobile} {
+				margin: 30px auto auto;
+			}
+			@media screen and(max-width: 400px) {
+				max-width: 300px;
+			}
+			@media screen and(max-width: 350px) {
+				max-width: 260px;
+			}
+			h3 {
+				font-size: 18px;
+				font-weight: 700;
+				color: #1d2021;
+				padding-top: 50px;
+				padding-bottom: 35px;
+			}
+			span {
+				font-size: 12px;
+				font-weight: 700;
+				color: #919191;
+				margin-top: 7px;
+				margin-bottom: 15px;
+				display: block;
+			}
+			p {
+				color: #6c6d6f;
+				font: 300 normal 14px $font3;
+			}
+		}
+		/* the slides */
+		.slick-slide {
+		    // margin: 0 10px;
+		}
+		/* the parent */
+		.slick-list {
+		    // margin: 0 -10px;
+		}
+		.slick {
+			&-active {
+				opacity: 0.3;
+			}
+			&-current {
+				opacity: 1;
+				.slick-comments__right {
+					display: block;
+					&:before {
+						content: '';
+						position: absolute;
+						top: 0px;
+						left: 0px;
+						background-color: #571fbc;
+						height: 2px;
+						width: 100%;
+					}
+				}
+			}
+			&-next, &-prev {
+				width: 70px;
+				height: 70px;
+				border-radius: 50%;
+				background-color: rgba(255, 255, 255, 1);
+				box-shadow: 3px 3px 15px 5px rgba(0, 0, 0, 0.1);
+				opacity: 0.85;
+				&:before, &:after {
+					content: '';
+					position: absolute;
+				}
+				&:before {
+					height: 3px;
+					width: 23px;
+					top: 0px;
+					right: 0px;
+					left: 0px;
+					bottom: 0px;
+					margin: auto;
+					background-color: #515497;
+				}
+				&:after {
+					right: 24px;
+					top: 28px;
+					width: 0px;
+				    height: 0px;
+				    padding: 6px;
+				    border-style: solid;
+				    border-color: #515497;
+				    border-width: 0px 3px 3px 0px;
+				    @include addPrefix(transform, rotate(-45deg));
+				}
+				&:hover, &:focus, &:active {
+					background: rgb(64,30,123);
+					background: -moz-linear-gradient(left, rgba(137,208,241,1) 0%, rgba(64,30,123,1) 100%);
+					background: -webkit-linear-gradient(left, rgba(137,208,241,1) 0%, rgba(64,30,123,1) 100%);
+					background: linear-gradient(to right, rgba(137,208,241,1) 0%, rgba(64,30,123,1) 100%);
+					filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#89d0f1', endColorstr='#401e7b',GradientType=1 );
+					&:before {
+						background-color: $main_color;
+					}
+					&:after {
+						border-color: $main_color;
+					}
+				}
+			}
+			&-prev {
+				left: 230px;
+				z-index: 1;
+				@media #{$desctop-md} {
+					left: 150px;
+				}
+				@media #{$desctop} {
+					left: 50px;
+				}
+				@media #{$tablet} {
+					left: 0px;
+				}
+				&:after {
+					right: initial;
+					left: 24px;
+					@include addPrefix(transform, rotate(135deg));
+				}
+			}
+			&-next {
+				right: 230px;
+				@media #{$desctop-md} {
+					right: 150px;
+				}
+				@media #{$desctop} {
+					right: 50px;
+				}
+				@media #{$tablet} {
+					right: 0px;
+				}
+			}
+		}
+	}
+}

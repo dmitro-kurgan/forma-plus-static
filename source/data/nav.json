@@ -1,0 +1,14 @@
+{
+  "navPages": {
+    "Главная" : "./",
+    "О нас" : "about.html"
+  },
+  "navPages2": {
+    "Продукция" : "product.html",
+    "Оборудование" : "equipment.html",
+    "Просчет" : "count.html",
+    "Отзывы" : "comments.html",
+    "Контакты" : "contacts.html",
+    "Новости" : "news.html"
+  }
+}

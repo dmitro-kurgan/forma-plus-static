@@ -1,0 +1,89 @@
+.you-like {
+	margin-top: 110px;
+	.section-title {
+		margin-bottom: 55px;
+	}
+	ul {
+		li {
+			@media #{$mobile} {
+				& + li {
+					margin-top: 50px;
+				}
+			}
+		}
+	}
+	&__box {
+		display: block;
+		@media #{$mobile} {
+			max-width: 320px;
+			margin: auto;
+		}
+	}
+	&__img {
+		min-height: 215px;
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-position: center;
+		@media #{$tablet} {
+			min-height: 150px;
+		}
+	}
+	&__data {
+		color: #575757;
+		font: 400 normal 13px $font3;
+		margin-top: 12px;
+		margin-bottom: 15px;
+		@media #{$tablet} {
+			margin-bottom: 10px;
+		}
+	}
+	&__name {
+		color: #1d2021;
+		font-size: 18px;
+		font-weight: 700;
+		line-height: 1.25;
+		@media #{$desctop} {
+			font-size: 16px;
+		}
+		@media #{$tablet} {
+			font-size: 13px;
+		}
+	}
+	&__link {
+		margin-top: 20px;
+		padding-right: 18px;
+		display: inline-block;
+		font-size: 11px;
+		font-weight: 700;
+		color: #a3a3a3;
+		text-transform: uppercase;
+		position: relative;
+		transition: $main_transition;
+		@media #{$tablet} {
+			margin-top: 15px;
+		}
+		&:after {
+			content: '';
+			position: absolute;
+			right: 0px;
+			top: -1px;
+			bottom: 0px;
+			margin: auto;
+			opacity: 0;
+			width: 0px;
+			height: 0px;
+			padding: 3px;
+			border-style: solid;
+			border-color: #0072a1;
+			border-width: 0px 2px 2px 0px;
+			@include addPrefix(transform, rotate(-45deg));
+			transition: $main_transition;
+		}
+		&:hover {
+			color: #0072a1;
+			&:after {
+				opacity: 1;
+			}
+		}
+	}
+}

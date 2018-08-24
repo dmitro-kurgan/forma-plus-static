@@ -1,0 +1,17 @@
+$prefixes: "-webkit-", "-o-", "-moz-", "-ms-";
+
+@mixin addPrefix($item, $val) {
+	@each $tmp in $prefixes {
+		#{$tmp}#{$item}:#{$val};
+	}
+	#{$item}: $val;
+}
+
+$prefixes-placeholder: "&::-webkit-input-", "&::-moz-", "&:-moz-", "&:-ms-";
+
+@mixin addPrefixPlaceholder($placeholder, $item, $val) {
+	@each $tmp in $prefixes-placeholder {
+		#{$tmp}#{$placeholder}{#{$item}:#{$val}};
+	}
+	#{$placeholder}{#{$item}: $val};
+}

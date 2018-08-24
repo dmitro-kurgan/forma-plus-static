@@ -1,0 +1,46 @@
+block vars
+	- var tel1 = '+38(050)400-31-67'
+	- var tel1link = '+380504003167'
+	- var tel2 = '+38(050)575-71-72'
+	- var tel2link = '+380505757172'
+	- var mail = 'formikaltd@ukr.net'
+
+section.contact-us
+	h2.section-title
+		| Свяжитесь
+		br
+		| с нами!
+	.contact-us__block
+		.row
+			.col-md-4
+				.contact-us__tel
+					p Телефон:
+					ul
+						li
+							a(href="tel:" + tel1link)= tel1
+						li
+							a(href="tel:" + tel2link)= tel2
+				.contact-us__email
+					p E-mail
+					ul
+						li
+							a(href="mailto:" + mail)= mail
+				.contact-us__address
+					p Адрес:
+					ul
+						li
+							| ул. Текстильная 24
+							br
+							| г. Харьков, Украина
+			.col-md-8
+				.contact-us__form
+					form
+						.form-group.clearfix
+							input.form-control(type="text", placeholder='Имя')
+							input.form-control(type="text", placeholder='Фамилия')
+						.form-group.clearfix
+							input.form-control(type="text", placeholder='Телефон')
+							input.form-control(type="text", placeholder='E-mail')
+						.form-group
+							textarea.form-control(placeholder='Сообщение')
+						button(type='submit').btn.btn--blue Отправить

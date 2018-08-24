@@ -1,0 +1,82 @@
+extends ../templates/base
+
+block variables
+	- var classBody = 'contacts-page'
+	- var classWrapper = 'contacts'
+
+block title
+	title Контакты
+
+block header
+	include ../modules/header
+	+header()
+block main
+	section.breadcrumb
+		.container
+			ul.clearfix
+				li
+					a(href='./') Главная
+				li Просчет
+			+language()
+	.content-main.container
+		h1 Контакты
+		.content-main__inner
+			section.contacts
+				.row
+					.col-md-8
+						.contacts__map#map
+					.col-md-4
+						.contacts__info
+							h2.section-title
+								| Наши контакты
+							.contact-us__tel
+								p Телефон:
+									span
+										i.fa.fa-phone(aria-hidden='true')
+								ul
+									li
+										a(href="tel:" + tel1link)= tel1
+									li
+										a(href="tel:" + tel2link)= tel2
+									li
+										a(href="tel:" + tel2link)= tel2
+									li
+										a(href="tel:" + tel2link)
+											span тел./факс:
+											|
+											= tel2
+							.contact-us__email
+								p E-mail
+									span
+										i.fa.fa-envelope(aria-hidden='true')
+								ul
+									li
+										a(href="mailto:" + mail)= mail
+							.contact-us__address
+								p Адрес:
+									span
+										i.fa.fa-map-marker(aria-hidden='true')
+								ul
+									li
+										| ул. Текстильная 24
+										br
+										| г. Харьков, Украина
+			section.contact-us__block
+				h2.section-title
+					| Свяжитесь с нами!
+				.row
+					.col-md-4
+						p.
+							С другой стороны реализация намеченных плановых заданий требуют определения и уточнения системы обучения кадров, соответствует насущным потребностям. Повседневная практика показывает, что постоянное ...
+					.col-md-8
+						.contact-us__form
+							form
+								.form-group.clearfix
+									input.form-control(type="text", placeholder='Имя')
+									input.form-control(type="text", placeholder='Фамилия')
+								.form-group.clearfix
+									input.form-control(type="text", placeholder='Телефон')
+									input.form-control(type="text", placeholder='E-mail')
+								.form-group
+									textarea.form-control(placeholder='Сообщение')
+								button(type='submit').btn.btn--blue Отправить

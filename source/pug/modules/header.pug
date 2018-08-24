@@ -1,0 +1,56 @@
+- var json = require('../../data/nav.json')
+
+mixin header()
+	header
+		.header
+			.container
+				.header__content.clearfix
+					a(href="./").header__logo
+					.header__menu#headerMenu
+						ul.clearfix
+							each link, title in json.navPages
+								li
+									a(href= link)= title
+							li.menu-item-has-children
+								a(href="services.html") Услуги
+								ul.sub-menu
+									li.menu-item-has-children
+										a(href="services.html") Пресс формы
+										ul
+											li
+												a(href="services.html") Пресс формы 1
+											li
+												a(href="services.html") Пресс формы 2
+											li
+												a(href="services.html") Пресс формы 3
+									li
+										a(href="services.html") Штампы
+									li
+										a(href="services.html") Услуги серийного производства
+							each link, title in json.navPages2
+								li
+									a(href= link)= title
+					if block
+						block
+					else
+						.header__contact
+							a(href="tel:#").telephone
+								.pulse
+									.pulse__layout
+									.block
+									.phone
+										i.fa.fa-phone(aria-hidden="true")
+								p Связаться с нами!
+					.header__hamburger#hamburger
+						span.top
+						span.mid
+						span.bottom
+mixin header-contact()
+	.header__contact
+		+language()
+		a(href="tel:#").telephone
+			.pulse
+				.pulse__layout
+				.block
+				.phone
+					i.fa.fa-phone(aria-hidden="true")
